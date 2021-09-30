@@ -25,10 +25,15 @@ Route::get('login', function () {
 Route::get('/login1', function () {
     return view('login1');
 });
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('login1');
+});
 Route::post("/login1",[loginController::class,'loginData']);
 Route::get("/log",[productController::class,'loginProduct']);
 Route::get("detail/{id}",[productController::class,'prodetail']);
 Route::get("search",[productController::class,'search']);
+Route::post("add_to_cart",[productController::class,'AddToCart']);
 
 
 
