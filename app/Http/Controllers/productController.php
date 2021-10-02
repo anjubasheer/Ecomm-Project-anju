@@ -46,4 +46,10 @@ class productController extends Controller
         $userId=Session::get('user')['id'];
      return Cart::where('user_id',$userId)->count();
     }
+
+    public function loginProduct1()
+    {
+        $data= Product::all();
+        return view('home', ['products'=>$data]);
+    }
 }

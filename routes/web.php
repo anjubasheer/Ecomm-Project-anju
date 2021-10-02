@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('login', function () {
     return view('login');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 Route::get('/login1', function () {
     return view('login1');
 });
@@ -34,6 +37,10 @@ Route::get("/log",[productController::class,'loginProduct']);
 Route::get("detail/{id}",[productController::class,'prodetail']);
 Route::get("search",[productController::class,'search']);
 Route::post("add_to_cart",[productController::class,'AddToCart']);
+
+Route::get("/home",[productController::class,'loginProduct1']);
+
+
 
 
 
